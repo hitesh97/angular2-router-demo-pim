@@ -2,9 +2,9 @@
 *.tmp
 node_modules/
 web/*.html
-web/lib
-web/js
-web/css
+web/lib/
+web/js/
+web/css/
 .idea
 .eclipse
 .classpath

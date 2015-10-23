@@ -47,7 +47,7 @@ gulp.task('ts', function(done) {
 gulp.task('watch', ['watch.assets', 'watch.ts', 'watch.web']);
 
 gulp.task('watch.assets', ['assets'], function() {
-  return gulp.watch(['./src/**/*.json', './src/**/*.html', './src/**/*.css'], [
+  return gulp.watch(['./src/**/*.html', './src/**/*.json', './src/**/*.html', './src/**/*.css'], [
     'assets'
   ]);
 });
