@@ -1,0 +1,15 @@
+.vscode
+*.tmp
+node_modules/
+web/lib
+web/js
+.idea
+.eclipse
+.classpath
+.project
+*.ipr
+*.iwj
+.DS_Store
+*.bak
+*.swp
+
