@@ -1,30 +1,23 @@
-import { Injectable } from 'angular2/angular2';
+import { Http, Response } from 'angular2/http';
+import { Task } from '../datatypes/task';
 
 export class TaskService {
-  static isCreating: boolean;
-  private TaskService() {
-    throw "Cannot instantiate";
+  /*constructor(public http: Http) {
+    console.log('Task Service created.', http);
   }
+  getTasks() {
+    // return an observable
+    return this.http.get('/api/v1/tasks')
+      .map( (responseData) => { return responseData.json() })
+      .map((tasks: Array<any>) => {
+        if (tasks) {
+          let result:Array<Task> = [];
+          tasks.forEach((task) => {
+            result.push(new Task(task.id, task.description, task.dueDate, task.complete));
+          });
+          return result;
+        }
+      });
+  }*/
 
-  private static instance: TaskService;
-
-  static getInstance() {
-    if (!TaskService.instance) {
-      // is this trip really necessary? This would
-      // ALWAYS be synchronous, right?
-      TaskService.isCreating = true;
-      TaskService.instance = new TaskService();
-      TaskService.isCreating = false;
-    }
-
-    console.log('You want me again???');
-    return this.instance;
-  }
-
-  constructor() {
-    if (!TaskService.isCreating) {
-      throw new Error("You cannot create a singleton with a standard constructor call. Try TaskService.getInstance() instead");
-    }
-    console.log('I am ALIIIVE!');
-  }
 }

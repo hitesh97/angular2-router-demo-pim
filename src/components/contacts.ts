@@ -4,7 +4,7 @@ import { ContactService } from '../services/contact-service';
 let contactService = new ContactService();
 @Component({
   selector: 'contacts-component',
-  template: `Hi Uncle, it's {{ serviceDate  }}`,
+  template: `Hi Uncle, it's {{ getServiceDate()  }}`,
   directives: [CORE_DIRECTIVES]
 })
 export class ContactsComponent {

@@ -74,7 +74,9 @@ gulp.task('watch.web', function() {
 
 gulp.task('express', function() {
   var express = require('express');
+  console.log(routes);
   var app = express();
+  var routes = require('./server/routes.js')(app);
   app.use(require('connect-livereload')({
     port: 35729,
     address: '0.0.0.0'

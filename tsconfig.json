@@ -23,6 +23,7 @@
     "src/components/contacts.ts",
     "src/components/messages.ts",
     "src/components/tasks.ts",
+    "src/datatypes/task.ts",
     "src/services/contact-service.ts",
     "src/services/task-service.ts"
   ],

@@ -16,7 +16,6 @@ import { ContactService } from './services/contact-service';
 
 @Component({
   selector: 'pim-app',
-  //viewInjector: [TaskService, ContactService]
   template: `
     <div>
       <h2>Let's work!</h2>
@@ -34,6 +33,7 @@ import { ContactService } from './services/contact-service';
   directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES]
 })
 @RouteConfig([
+  { path: '/', component: TasksComponent, as: 'Tasks' },
   { path: '/Tasks', component: TasksComponent, as: 'Tasks' },
   { path: '/Contacts', component: ContactsComponent, as: 'Contacts' },
   { path: '/Calendar', component: CalendarComponent, as: 'Calendar' },
@@ -46,5 +46,5 @@ export class App {
   }
 }
 
-bootstrap(App, [HTTP_BINDINGS, ROUTER_BINDINGS])
+bootstrap(App, [HTTP_BINDINGS, ROUTER_BINDINGS, ContactService, TaskService])
   .catch(err => console.error(err));
