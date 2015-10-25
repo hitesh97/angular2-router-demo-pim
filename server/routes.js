@@ -1,5 +1,8 @@
 
 module.exports = function(app) {
+  app.get('/*', function(req, res) {
+    res.sendFile('index.html', { root: './web' });
+  });
   app.get('/api/v1/tasks', function(req, res) {
     res.send(200, [
       { id: 1, description: 'Do the dishes', dueDate: new Date(), complete: false },
