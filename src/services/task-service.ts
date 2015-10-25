@@ -2,9 +2,10 @@ import { Http, Response } from 'angular2/http';
 import { Task } from '../datatypes/task';
 
 export class TaskService {
-  /*constructor(public http: Http) {
+  constructor(public http: Http) {
     console.log('Task Service created.', http);
   }
+  /*
   getTasks() {
     // return an observable
     return this.http.get('/api/v1/tasks')
