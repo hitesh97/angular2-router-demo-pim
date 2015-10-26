@@ -1,31 +1,31 @@
 {
-  "version": "1.6.0",
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "web/js",
-    "target": "es5",
-    "module": "system",
-    "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "listFiles": true
-  },
-  "filesGlob": [
-    "src/**/*.ts"
-  ],
-  "files": [
-    "src/app.ts",
-    "src/components/calendar.ts",
-    "src/components/contacts.ts",
-    "src/components/messages.ts",
-    "src/components/tasks.ts",
-    "src/datatypes/task.ts",
-    "src/services/contact-service.ts",
-    "src/services/task-service.ts"
-  ],
-  "exclude": []
+    "version": "1.6.0",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "web/js",
+        "target": "es5",
+        "module": "system",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "listFiles": true
+    },
+    "filesGlob": [
+        "src/**/*.ts"
+    ],
+    "files": [
+        "src/app.ts",
+        "src/components/calendar.ts",
+        "src/components/contacts.ts",
+        "src/components/messages.ts",
+        "src/components/tasks.ts",
+        "src/datatypes/task.ts",
+        "src/services/contact-service.ts",
+        "src/services/task-service.ts"
+    ],
+    "exclude": []
 }

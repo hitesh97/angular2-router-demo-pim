@@ -1,6 +1,6 @@
 //our root app component
 import {bootstrap, Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
-import {HTTP_BINDINGS} from 'angular2/http';
+import {HTTP_BINDINGS, HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 
 // our routes
@@ -46,5 +46,5 @@ export class App {
   }
 }
 
-bootstrap(App, [HTTP_BINDINGS, ROUTER_BINDINGS, ContactService, TaskService])
+bootstrap(App, [HTTP_PROVIDERS, ROUTER_BINDINGS, ContactService, TaskService])
   .catch(err => console.error(err));

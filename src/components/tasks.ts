@@ -4,6 +4,7 @@ import { Task } from '../datatypes/task';
 import { Http } from 'angular2/http';
 @Component({
   selector: 'tasks-component',
+  providers: [TaskService],
   template: `
     <ul>
       <li *ng-for="#task of tasks">
@@ -16,12 +17,13 @@ import { Http } from 'angular2/http';
 })
 export class TasksComponent {
   tasks: Array<Task>;
-  constructor(public taskService: TaskService, public http: Http) {
+  constructor(public taskService: TaskService) {
     console.log('Routed to the task view');
-    console.log('http is ', http);
     console.log('task service is ', taskService);
-    /*taskService.getTasks()
-      .subscribe()
-      .map((tasks) => { this.tasks = tasks }); */
+    taskService.getTasks().subscribe((results) => {
+       console.log(results);
+       this.tasks = results;
+     });
+    ;
   }
 }
