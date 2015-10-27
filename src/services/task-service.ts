@@ -22,15 +22,13 @@ export class TaskService {
       return responseData.json();
     })
     .map((tasks: Array<any>) => {
+      let result:Array<Task> = [];
       if (tasks) {
-        let result:Array<Task> = [];
         tasks.forEach((task) => {
           result.push(new Task(task.id, task.description, task.dueDate, task.complete));
         });
-        return result;
-      } else {
-        alert('no tasks');
       }
+      return result;
     });
   }
 }

@@ -1,7 +1,6 @@
-import { Component, View, CORE_DIRECTIVES } from 'angular2/angular2';
+import { Component, CORE_DIRECTIVES } from 'angular2/angular2';
 import { TaskService } from '../services/task-service';
 import { Task } from '../datatypes/task';
-import { Http } from 'angular2/http';
 @Component({
   selector: 'tasks-component',
   providers: [TaskService],
@@ -20,10 +19,7 @@ export class TasksComponent {
   constructor(public taskService: TaskService) {
     console.log('Routed to the task view');
     console.log('task service is ', taskService);
-    taskService.getTasks().subscribe((results) => {
-       console.log(results);
-       this.tasks = results;
-     });
-    ;
+    taskService.getTasks()
+      .subscribe(res => this.tasks = res);
   }
 }
