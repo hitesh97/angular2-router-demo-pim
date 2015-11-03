@@ -31,10 +31,21 @@ export class TaskService {
       return result;
     });
   }
+
   addTask(description: string, priority: number, dueDate: Date) {
     console.log('adding task - start', description, priority, dueDate);
-    var taskData = new Task(null, description, priority, dueDate, false);
-    console.log('adding task', taskData);
-    return this.http.put('/api/v1/tasks', JSON.stringify(taskData));
+    var task = new Task(null, description, priority, dueDate, false);
+    return this.http.put('/api/v1/tasks', JSON.stringify(task));
+  }
+
+  toggleComplete(task: Task) {
+    if (task.complete !== true) {
+      task.setComplete();
+    } else {
+      task.clearCompleteFlag();
+    }
+    console.log('completing task', task);
+
+    return this.http.post('/api/v1/tasks', JSON.stringify(task));
   }
 }

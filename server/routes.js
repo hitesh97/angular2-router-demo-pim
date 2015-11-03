@@ -27,6 +27,18 @@ module.exports = function(app) {
     tasks.push(task);
     res.status(200).send('OK');
   });
+  app.post('/api/v1/tasks', function(req, res) {
+    var task = req.body;
+    if (task.complete !== undefined) {
+      tasks.find(function(t) { return t.id === task.id}).complete = task.complete;
+      console.log(tasks);
+      res.status(201).send('OK');
+    } else {
+      console.log('task not found');
+      res.status(404).send('NOT FOUND');
+    }
+
+  })
   app.get('/*', function(req, res) {
     res.sendFile('index.html', { root: './web' });
   });

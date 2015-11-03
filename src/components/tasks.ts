@@ -25,7 +25,7 @@ import { Task } from '../datatypes/task';
       <li *ng-for="#task of tasks">
         <input type="checkbox"
            ng-input="task.complete"
-           (check)="completeTask(task)"> {{ task.description }} - Priority {{ task.priority }}- due @ {{ task.dueDate }}
+           (click)="toggleComplete(this, task)"> {{ task.description }} - Priority {{ task.priority }}- due @ {{ task.dueDate }}
       </li>
     </ul>
   `,
@@ -47,6 +47,12 @@ export class TasksComponent {
     console.log('submitted', task);
     var result = this.taskService.addTask(task.description, task.priority, task.dueDate);
     result.subscribe(() => this.refreshTasks());
+  }
+  toggleComplete(comp, task) {
+    console.log(comp);
+    console.log('toggle complete',  task);
+    var result = this.taskService.toggleComplete(task);
+    result.subscribe(() => this.refreshTasks()); 
   }
 
 }

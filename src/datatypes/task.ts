@@ -24,5 +24,9 @@ export class Task {
     this.complete = true;
     this.completedDate = new Date();
   }
+  clearCompleteFlag() {
+    this.complete = false;
+    this.completedDate = null;
+  }
 
 }
