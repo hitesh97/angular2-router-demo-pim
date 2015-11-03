@@ -1,13 +1,23 @@
 export class Task {
+  static lastId = 0;
   id: number;
   description: string;
+  priority: number;
   dueDate: Date;
   complete: boolean;
   completedDate: Date;
-  constructor(id: number, description: string, dueDate: Date, complete: boolean) {
-    this.id = id;
+  constructor(id: number, description: string, priority: number, dueDate: Date, complete: boolean) {
+    if (!id) {
+      // TODO BLECH!!!
+      Task.lastId = Task.lastId + 1;
+      this.id = Task.lastId;
+    } else {
+      this.id = id;
+    }
+
     this.description = description;
     this.dueDate = dueDate;
+    this.priority = priority;
     this.complete = complete;
   }
   setComplete() {
