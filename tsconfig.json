@@ -22,6 +22,7 @@
         "node_modules/angular2/bundles/typings/angular2/http.d.ts",
         "node_modules/angular2/bundles/typings/angular2/router.d.ts",
         "node_modules/angular2/bundles/typings/es6-shim/es6-shim.d.ts",
+        "node_modules/rx/ts/rx.d.ts",
         "src/app.ts",
         "src/components/calendar.ts",
         "src/components/contacts.ts",
