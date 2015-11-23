@@ -1,7 +1,7 @@
 {
   "quotemark": [
-  false,
-  "single",
-  "avoid-escape"
-]
+    false,
+    "single",
+    "avoid-escape"
+  ]
 }
