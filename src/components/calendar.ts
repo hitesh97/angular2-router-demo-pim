@@ -4,5 +4,6 @@ import { Component, View, CORE_DIRECTIVES } from 'angular2/angular2';
   selector: 'calendar-component',
   template: 'Hi Pop',
   directives: [CORE_DIRECTIVES]
+
 })
 export class CalendarComponent { }
