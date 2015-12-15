@@ -1,4 +1,5 @@
-import { Component, CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/angular2';
+import { Component } from 'angular2/core';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
 import { TaskService } from '../services/task-service';
 import { Task } from '../datatypes/task';
 @Component({
@@ -8,8 +9,8 @@ import { Task } from '../datatypes/task';
   <form #f="form"
     (submit)="save(f.value)">
       <input type="text" name="description"
-             ng-control="description">
-      <select ng-control="priority">
+             ngControl="description">
+      <select ngControl="priority">
          <option value="1">1</option>
          <option value="2">2</option>
          <option value="3">3</option>
@@ -17,14 +18,14 @@ import { Task } from '../datatypes/task';
          <option value="5">5</option>
       </select>
       <input type="date" name="dueDate"
-              ng-control="dueDate">
+              ngControl="dueDate">
       <button type="submit">Save</button>
     </form>
 
     <ul>
-      <li *ng-for="#task of tasks">
+      <li *ngFor="#task of tasks">
         <input type="checkbox"
-           ng-input="task.complete"
+           ngInput="task.complete"
            (click)="toggleComplete(this, task)"> {{ task.description }} - Priority {{ task.priority }}- due @ {{ task.dueDate }}
       </li>
     </ul>

@@ -1,4 +1,5 @@
-import { Component, View, CORE_DIRECTIVES } from 'angular2/angular2';
+import { Component, View} from 'angular2/core';
+import { CORE_DIRECTIVES } from 'angular2/common';
 import { ContactService } from '../services/contact-service';
 
 let contactService = new ContactService();

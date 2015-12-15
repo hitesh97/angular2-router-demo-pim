@@ -17,12 +17,16 @@ gulp.task('setup', function(done) {
     'node_modules/systemjs/dist/*.*',
     'node_modules/jquery/dist/jquery.*js',
     'node_modules/bootstrap/dist/js/bootstrap*.js',
-    'node_modules/@reactivex/rxjs/dist/global/Rx.js'
+    'node_modules/reflect-metadata/Reflect.js'
   ]).pipe(gulp.dest('web/lib'));
 
   gulp.src([
     'node_modules/bootstrap/dist/css/bootstrap.css'
   ]).pipe(gulp.dest('web/css'));
+
+  gulp.src([
+    'node_modules/@reactivex/rxjs/dist/cjs/**/*.*'
+  ]).pipe(gulp.dest('web/lib/rx-cjs'));
 });
 
 gulp.task('assets', function() {
@@ -37,7 +41,7 @@ gulp.task('ts', function(done) {
       "node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
       "node_modules/angular2/bundles/typings/angular2/http.d.ts",
       "node_modules/angular2/bundles/typings/angular2/router.d.ts",
-      "node_modules/@reactivex/rxjs/dist/es6/Rx.d.ts",
+      "node_modules/@reactivex/rxjs/dist/cjs/Rx.d.ts",
       "src/**/*.ts"
     ])
     .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
