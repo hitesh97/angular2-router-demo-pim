@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
+import { HTTP_PROVIDER } from 'angular2/http';
 import { TaskService } from '../services/task-service';
 import { Task } from '../datatypes/task';
 @Component({
@@ -31,13 +32,13 @@ import { Task } from '../datatypes/task';
       </li>
     </ul>
   `,
+  providers: [HTTP_PROVIDER],
   bindings: [TaskService],
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class TasksComponent {
   tasks: Array<Task>;
   constructor(public taskService: TaskService) {
-    console.log('Routed to the task view');
     console.log('task service is ', taskService);
     this.refreshTasks();
   }
