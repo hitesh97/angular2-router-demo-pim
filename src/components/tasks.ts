@@ -6,6 +6,7 @@ import { Task } from '../datatypes/task';
   selector: 'tasks-component',
   providers: [TaskService],
   template: `
+  THIS IS THE TASK VIEW
   <form #f="form"
     (submit)="save(f.value)">
       <input type="text" name="description"
